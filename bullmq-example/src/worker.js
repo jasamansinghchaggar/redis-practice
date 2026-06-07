@@ -4,7 +4,7 @@ import { connection } from './queue.js';
 const worker = new Worker('email-queue', async job => {
     console.log(`Processing job ${job.id} with data:`, job.data);
     // Simulate email sending
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 5000));
     console.log(`Job ${job.id} completed`);
 }, { connection });
 
